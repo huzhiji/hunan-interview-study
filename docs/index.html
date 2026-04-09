@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湖南省考面试每日学习 - 2026-04-09</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header .date { font-size: 16px; opacity: 0.9; }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .card-icon { font-size: 28px; margin-right: 12px; }
+        .card-title { font-size: 20px; font-weight: bold; color: #333; }
+        .jinju-item {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .jinju-text { font-size: 20px; font-weight: bold; margin-bottom: 12px; line-height: 1.6; }
+        .jinju-meta { font-size: 14px; opacity: 0.9; margin-bottom: 15px; }
+        .jinju-section {
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .jinju-section-title { font-size: 14px; font-weight: bold; margin-bottom: 8px; opacity: 0.95; }
+        .jinju-section-content { font-size: 14px; line-height: 1.8; opacity: 0.95; }
+        .content-text { font-size: 16px; line-height: 2; color: #444; }
+        .section-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: #333;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .quote {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #1565c0;
+            line-height: 1.8;
+        }
+        .example-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .example-box-title { font-size: 14px; color: #666; margin-bottom: 10px; font-weight: bold; }
+        .example-box-content { font-size: 15px; line-height: 1.9; color: #333; }
+        .tag {
+            display: inline-block;
+            padding: 5px 14px;
+            background: #e9ecef;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #666;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .tag.important { background: #ff6b6b; color: white; }
+        .tag.primary { background: #667eea; color: white; }
+        .tips-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .tips-box-title { font-weight: bold; margin-bottom: 10px; }
+        .tips-box-content { font-size: 14px; line-height: 1.9; opacity: 0.95; }
+        .checklist { list-style: none; }
+        .checklist li {
+            padding: 18px;
+            margin-bottom: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .checklist li:hover { background: #e9ecef; }
+        .checklist li.completed { background: #d4edda; opacity: 0.8; }
+        .checklist li.completed span:last-child { text-decoration: line-through; }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #28a745;
+            border-radius: 50%;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .checklist li.completed .checkbox { background: #28a745; }
+        .checklist li.completed .checkbox::after {
+            content: "✓";
+            color: white;
+            font-size: 14px;
+        }
+        .progress-bar {
+            height: 12px;
+            background: #e9ecef;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.5s;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            font-size: 15px;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.3); }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+            .card { padding: 20px; }
+            .header h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 湖南省考面试每日学习</h1>
+            <div class="date">2026-04-09 · 第1天</div>
+            <div class="nav-links">
+                <a href="index.html">今日任务</a>
+                <a href="archive.html">历史记录</a>
+                <a href="about.html">关于</a>
+            </div>
+        </div>
+
+        <!-- 金句卡片 -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">💎</span>
+                <span class="card-title">今日必背金句（2句）</span>
+            </div>
+            
+            <div class="jinju-item">
+                <div class="jinju-text">"江山就是人民，人民就是江山"</div>
+                <div class="jinju-meta">⭐⭐⭐⭐⭐ 为民服务 · 习近平总书记在党史学习教育动员大会上的讲话</div>
+                
+                <div class="jinju-section">
+                    <div class="jinju-section-title">📖 出处背景</div>
+                    <div class="jinju-section-content">习近平总书记在党史学习教育动员大会上的讲话（2021年2月20日）。这句话深刻阐述了中国共产党与人民的血肉联系，体现了以人民为中心的发展思想。</div>
+                </div>
+                
+                <div class="jinju-section">
+                    <div class="jinju-section-title">💡 深度解析</div>
+                    <div class="jinju-section-content">"江山"指国家政权，"人民"是江山的根基。这句话强调：人民是历史的创造者，是决定党和国家前途命运的根本力量。打江山、守江山，守的是人民的心。</div>
+                </div>
+                
+                <div class="jinju-section">
+                    <div class="jinju-section-title">🎯 适用场景</div>
+                    <div class="jinju-section-content">群众工作类、民生问题类、服务型政府建设类题目开头，表达对人民立场的坚守。</div>
+                </div>
+                
+                <div class="jinju-section">
+                    <div class="jinju-section-title">✍️ 答题示例</div>
+                    <div class="jinju-section-content">"面对群众的急难愁盼问题，我们要始终牢记：江山就是人民，人民就是江山。只有把群众的事当成自己的事，才能真正做到为民解忧、为民谋利。"</div>
+                </div>
+            </div>
+            
+            <div class="jinju-item">
+                <div class="jinju-text">"民之所忧，我必念之；民之所盼，我必行之"</div>
+                <div class="jinju-meta">⭐⭐⭐⭐⭐ 为民服务 · 习近平主席2022年新年贺词</div>
+                
+                <div class="jinju-section">
+                    <div class="jinju-section-title">📖 出处背景</div>
+                    <div class="jinju-section-content">习近平主席2022年新年贺词。这句话体现了中国共产党人始终把人民放在心中最高位置，对人民承诺的庄严宣示。</div>
+                </div>
+                
+                <div class="jinju-section">
+                    <div class="jinju-section-title">💡 深度解析</div>
+                    <div class="jinju-section-content">"忧"是群众的困难疾苦，"盼"是群众的美好向往。这句话强调：要把群众的"急难愁盼"作为工作的出发点和落脚点，做到民有所呼、我有所应。</div>
+                </div>
+                
+                <div class="jinju-section">
+                    <div class="jinju-section-title">🎯 适用场景</div>
+                    <div class="jinju-section-content">民生类、服务型政府建设类、基层工作类题目，体现主动作为、为民服务的态度。</div>
+                </div>
+                
+                <div class="jinju-section">
+                    <div class="jinju-section-title">✍️ 答题示例</div>
+                    <div class="jinju-section-content">"作为市场监管人员，面对群众对食品安全的担忧，我们要牢记：民之所忧，我必念之；民之所盼，我必行之。用最严格的监管、最严厉的处罚，守护群众'舌尖上的安全'。"</div>
+                </div>
+            </div>
+            
+            <div class="tips-box">
+                <div class="tips-box-title">🧠 记忆口诀</div>
+                <div class="tips-box-content">金句1记"江山人民"，金句2记"忧念盼行"。两句都出自习近平总书记，都强调以人民为中心，可以搭配使用：先讲"江山就是人民"立论，再用"民之所忧我必念之"展开。</div>
+            </div>
+        </div>
+
+        <!-- 热点卡片 -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🔥</span>
+                <span class="card-title">今日热点事件</span>
+            </div>
+            
+            <div class="content-text">
+                <div style="margin-bottom: 15px;">
+                    <span class="tag important">食品安全</span>
+                    <span class="tag">2024年3月</span>
+                    <span class="tag primary">315晚会</span>
+                </div>
+                
+                <h3 style="margin: 15px 0; color: #333; font-size: 20px;">315晚会曝光预制菜乱象</h3>
+                
+                <div class="section-title">📋 事件概述</div>
+                <p>2024年3月15日，央视315晚会曝光安徽阜阳部分企业使用未经严格处理的槽头肉（含淋巴结、脂肪瘤等）制作梅菜扣肉预制菜，引发社会广泛关注。涉事企业包括春天食品有限公司、东辉食品科技有限公司等。事件曝光后，安徽省市场监管部门连夜查处涉事企业，开展预制菜行业专项整治行动。</p>
+                
+                <div class="section-title">🔍 核心要点</div>
+                <ul style="margin-left: 25px; line-height: 2.2;">
+                    <li><strong>食品安全是民生底线</strong>——预制菜作为新兴业态，不能成为监管盲区</li>
+                    <li><strong>全链条监管的重要性</strong>——从原料采购到生产加工，每个环节都不能放松</li>
+                    <li><strong>企业主体责任</strong>——不能为了降低成本而牺牲食品安全</li>
+                    <li><strong>新业态规范发展</strong>——预制菜行业需要标准先行、监管跟进</li>
+                </ul>
+                
+                <div class="section-title">💼 面试应用</div>
+                <p>可用于以下类型题目：</p>
+                <ul style="margin-left: 25px; line-height: 1.9; margin-top: 8px;">
+                    <li>食品安全监管类题目</li>
+                    <li>新业态监管（预制菜、直播带货等）</li>
+                    <li>消费者权益保护</li>
+                    <li>媒体监督与政府回应</li>
+                </ul>
+                
+                <div class="example-box">
+                    <div class="example-box-title">📝 答题示例框架</div>
+                    <div class="example-box-content">"315晚会曝光的预制菜乱象，反映出食品安全监管面临的挑战。作为市场监管人员，我认为要从三个方面着手：一是完善标准体系，制定预制菜行业规范；二是强化源头治理，建立从农田到餐桌的全链条监管；三是压实企业主体责任，对违法行为零容忍。"</div>
+                </div>
+                
+                <div class="quote">
+                    <strong>启示：</strong>监管部门要加强源头治理，建立健全从农田到餐桌的全链条监管体系，用最严谨的标准、最严格的监管、最严厉的处罚、最严肃的问责，确保人民群众"舌尖上的安全"。
+                </div>
+            </div>
+        </div>
+
+        <!-- 人物卡片 -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">⭐</span>
+                <span class="card-title">今日榜样人物</span>
+            </div>
+            
+            <div class="content-text">
+                <h3 style="margin-bottom: 15px; color: #333; font-size: 20px;">黄文秀 —— 全国脱贫攻坚楷模</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <span class="tag">广西百色</span>
+                    <span class="tag primary">时代楷模</span>
+                    <span class="tag important">七一勋章</span>
+                    <span class="tag">全国脱贫攻坚楷模</span>
+                </div>
+                
+                <div class="section-title">📖 人物简介</div>
+                <p>黄文秀（1989-2019），壮族，广西田阳人，中共党员。北京师范大学法学硕士毕业后，放弃大城市高薪工作机会，主动请缨回到家乡百色革命老区，担任乐业县新化镇百坭村驻村第一书记。</p>
+                
+                <div class="section-title">🏆 主要事迹</div>
+                <ul style="margin-left: 25px; line-height: 2; margin-top: 10px;">
+                    <li><strong>扎根基层：</strong>走遍全村195户贫困户，绘制"民情地图"</li>
+                    <li><strong>发展产业：</strong>带领村民发展砂糖橘、油茶、蜂蜜等产业</li>
+                    <li><strong>改善民生：</strong>推动修建道路、安装路灯、建设蓄水池</li>
+                    <li><strong>脱贫成效：</strong>使贫困发生率从22.88%降至2.71%</li>
+                    <li><strong>因公殉职：</strong>2019年6月17日，在返回工作岗位途中遭遇山洪，年仅30岁</li>
+                </ul>
+                
+                <div class="quote" style="font-size: 18px; text-align: center;">
+                    "只有扎根泥土，才能懂得人民"
+                </div>
+                
+                <div class="section-title">🎯 适用话题</div>
+                <div style="margin-top: 10px;">
+                    <span class="tag">基层工作</span>
+                    <span class="tag">脱贫攻坚</span>
+                    <span class="tag">人生选择</span>
+                    <span class="tag">初心使命</span>
+                    <span class="tag">青年担当</span>
+                    <span class="tag">奉献精神</span>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-box-title">📝 答题应用示例</div>
+                    <div class="example-box-content">
+                        <p style="margin-bottom: 10px;"><strong>题目：</strong>你为什么报考基层公务员？</p>
+                        <p><strong>回答：</strong>"黄文秀北师大硕士毕业后，放弃大城市工作机会，选择回乡扶贫。她说'只有扎根泥土，才能懂得人民'，用30岁的生命诠释了共产党人的初心。我选择报考基层，正是希望像她一样，到祖国最需要的地方去，在服务群众中实现人生价值。"</p>
+                    </div>
+                </div>
+                
+                <div class="tips-box">
+                    <div class="tips-box-title">💡 记忆要点</div>
+                    <div class="tips-box-content">记准三要素：<strong>北师大硕士</strong>（高学历却选择基层）、<strong>驻村第一书记</strong>（身份）、<strong>30岁因公殉职</strong>（感人结局）。语录必背："只有扎根泥土，才能懂得人民"。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 措施卡片 -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">📋</span>
+                <span class="card-title">今日政府措施</span>
+            </div>
+            
+            <div class="content-text">
+                <h3 style="margin-bottom: 15px; color: #333; font-size: 20px;">四下基层</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <span class="tag primary">群众路线</span>
+                    <span class="tag">调查研究</span>
+                    <span class="tag">1988年首创</span>
+                    <span class="tag important">福建宁德</span>
+                </div>
+                
+                <div class="section-title">📖 政策背景</div>
+                <p>"四下基层"是习近平总书记在福建宁德工作期间（1988-1990年）大力倡导并身体力行形成的工作方法和工作制度。35年来，这一制度从宁德走向全国，成为党的群众路线的实践创新。</p>
+                
+                <div class="section-title">📋 具体内容</div>
+                <div class="example-box">
+                    <div class="example-box-content">
+                        <p style="margin-bottom: 8px;"><strong>1. 宣传党的路线方针政策下基层</strong>——让党的声音传到群众心坎上</p>
+                        <p style="margin-bottom: 8px;"><strong>2. 调查研究下基层</strong>——在一线掌握实情、发现问题</p>
+                        <p style="margin-bottom: 8px;"><strong>3. 信访接待下基层</strong>——变群众上访为领导下访</p>
+                        <p><strong>4. 现场办公下基层</strong>——在一线解决问题、推动工作</p>
+                    </div>
+                </div>
+                
+                <div class="section-title">💡 重要意义</div>
+                <ul style="margin-left: 25px; line-height: 2;">
+                    <li>是践行党的群众路线的生动体现</li>
+                    <li>是改进工作作风、密切联系群众的重要载体</li>
+                    <li>是破解形式主义、官僚主义的有效方法</li>
+                    <li>是提升基层治理能力的实践路径</li>
+                </ul>
+                
+                <div class="section-title">🎯 应用场景</div>
+                <div style="margin-top: 10px;">
+                    <span class="tag">调查研究</span>
+                    <span class="tag">群众路线</span>
+                    <span class="tag">作风建设</span>
+                    <span class="tag">基层治理</span>
+                    <span class="tag">信访工作</span>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-box-title">📝 答题示例</div>
+                    <div class="example-box-content">
+                        <p style="margin-bottom: 10px;"><strong>题目：</strong>如何理解"从群众中来，到群众中去"？</p>
+                        <p><strong>回答：</strong>"这要求我们坚持'四下基层'，把办公桌搬到群众家门口。宣传政策下基层，让群众听得懂、能领会；调查研究下基层，掌握第一手资料；信访接待下基层，把矛盾化解在萌芽；现场办公下基层，在一线解决问题。只有这样，才能真正做到从群众中来、到群众中去。"</p>
+                    </div>
+                </div>
+                
+                <div class="quote">
+                    <strong>核心要义：</strong>把群众的事当成自己的事，在一线发现问题、解决问题，真正做到知民情、解民忧、暖民心。
+                </div>
+            </div>
+        </div>
+
+        <!-- 任务清单 -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">✅</span>
+                <span class="card-title">今日学习任务清单</span>
+            </div>
+            
+            <ul class="checklist" id="checklist">
+                <li onclick="toggleCheck(this)">
+                    <span class="checkbox"></span>
+                    <span>背诵金句2句（能完整复述，记住出处和用法）</span>
+                </li>
+                <li onclick="toggleCheck(this)">
+                    <span class="checkbox"></span>
+                    <span>复述热点事件（时间、内容、核心要点、启示）</span>
+                </li>
+                <li onclick="toggleCheck(this)">
+                    <span class="checkbox"></span>
+                    <span>记住人物三要素（事迹、语录、适用话题）</span>
+                </li>
+                <li onclick="toggleCheck(this)">
+                    <span class="checkbox"></span>
+                    <span>理解政府措施含义和应用</span>
+                </li>
+                <li onclick="toggleCheck(this)">
+                    <span class="checkbox"></span>
+                    <span>尝试用今日素材回答一道模拟题</span>
+                </li>
+            </ul>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+            <div style="text-align: center; margin-top: 10px; color: #666;">
+                完成进度：<span id="progressText">0/5</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💪 坚持就是胜利！每天进步一点点，面试成功在眼前！</p>
+            <p style="margin-top: 10px; font-size: 13px; opacity: 0.8;">
+                湖南省考株洲市市场监督管理局面试备考
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function toggleCheck(element) {
+            element.classList.toggle('completed');
+            updateProgress();
+        }
+        
+        function updateProgress() {
+            const items = document.querySelectorAll('.checklist li');
+            const completed = document.querySelectorAll('.checklist li.completed');
+            const progress = (completed.length / items.length) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('progressText').textContent = completed.length + '/' + items.length;
+        }
+    </script>
+</body>
+</html>

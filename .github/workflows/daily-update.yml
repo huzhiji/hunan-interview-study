@@ -1,0 +1,63 @@
+name: Daily Interview Study Update
+
+on:
+  schedule:
+    # 每天北京时间早上8点运行 (UTC 00:00)
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Generate daily content
+      run: |
+        cd .workbuddy
+        node daily_system.js today
+        node generate_site.js
+        
+    - name: Copy to docs folder
+      run: |
+        cp -r .workbuddy/site/* docs/
+        
+    - name: Commit and push
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add docs/
+        git commit -m "Update daily study content - $(date +'%Y-%m-%d')" || exit 0
+        git push
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: './docs'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

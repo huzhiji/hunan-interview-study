@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湖南省考面试背诵资料</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2e5090 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .nav {
+            background: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .nav-btn {
+            padding: 10px 20px;
+            border: none;
+            background: #f0f0f0;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background: #2e5090;
+            color: white;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .section-title {
+            font-size: 24px;
+            color: #1e3a5f;
+            border-left: 4px solid #c41e3a;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 3px solid #2e5090;
+        }
+        .card-title {
+            font-size: 18px;
+            color: #c41e3a;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .star {
+            color: #ff6b6b;
+            margin-right: 5px;
+        }
+        .quote-box {
+            background: #fff8dc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 18px;
+            color: #1e3a5f;
+            font-weight: 500;
+            position: relative;
+        }
+        .quote-box::before {
+            content: '"';
+            font-size: 40px;
+            color: #c41e3a;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.5;
+        }
+        .label {
+            display: inline-block;
+            padding: 3px 10px;
+            background: #2e5090;
+            color: white;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+        .usage {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .usage-title {
+            color: #c41e3a;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .toggle-btn {
+            background: #2e5090;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        .content-hidden {
+            display: none;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #e8f4f8;
+            color: #2e5090;
+            border-radius: 12px;
+            font-size: 12px;
+            margin: 3px;
+        }
+        .highlight {
+            background: yellow;
+            padding: 2px 4px;
+        }
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 24px;
+            }
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>湖南省考面试背诵资料</h1>
+        <p>株洲市市场监督管理局 · 直接背诵版</p>
+    </div>
+
+    <div class="nav">
+        <button class="nav-btn active" onclick="showSection('jinju')">必背金句</button>
+        <button class="nav-btn" onclick="showSection('renwu')">人物素材</button>
+        <button class="nav-btn" onclick="showSection('zhengce')">政策要点</button>
+        <button class="nav-btn" onclick="showSection('zhenti')">真题示范</button>
+    </div>
+
+    <div class="container">
+        <!-- 金句板块 -->
+        <div id="jinju" class="content-section">
+            <div class="section">
+                <h2 class="section-title">一、理想信念类（综合分析/自我认知）</h2>
+                
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句一（必背）</div>
+                    <div class="quote-box">权为民所用，情为民所系，利为民所谋。</div>
+                    <div><span class="label">出处</span>胡锦涛同志重要论断</div>
+                    <div style="margin-top:10px;"><span class="label">含义</span>权力来自人民，必须用来为人民服务</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例1（自我认知题）：</div>
+                        <p>我之所以报考公务员，是因为我始终牢记"权为民所用，情为民所系，利为民所谋"。作为一名年轻人，我希望能够用自己的知识和能力，真正为人民群众办实事、解难题。</p>
+                        <div class="usage-title" style="margin-top:10px;">用法示例2（综合分析题）：</div>
+                        <p>对于题目中提到的部分干部脱离群众的现象，我认为根本原因在于忘记了"权为民所用，情为民所系，利为民所谋"的初心。权力是人民赋予的，必须用来为人民服务...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句二（必背）</div>
+                    <div class="quote-box">心中有阳光，脚下有力量，为了理想能坚持、不懈怠，才能创造无愧于时代的人生。</div>
+                    <div><span class="label">出处</span>习近平总书记在知识分子、劳动模范、青年代表座谈会上的讲话</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例（演讲题/自我认知）：</div>
+                        <p>正如总书记所说，"心中有阳光，脚下有力量"。作为新时代的青年人，我们要坚定理想信念，扎根基层、服务群众，在平凡的岗位上创造不平凡的业绩...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★</span>金句三</div>
+                    <div class="quote-box">当官就不要发财，发财就不要当官。</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例：</div>
+                        <p>在面对诱惑时，我会时刻牢记总书记的告诫："当官就不要发财，发财就不要当官"。作为一名公务员，必须守住廉洁底线，清清白白做人、干干净净做事...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">二、为民服务类（万能！）</h2>
+                
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句一（必背！）</div>
+                    <div class="quote-box">民之所忧，我必念之；民之所盼，我必行之。</div>
+                    <div><span class="label">出处</span>习近平总书记2022年新年贺词</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例（应急应变-群众投诉）：</div>
+                        <p>面对群众的诉求，我会牢记"民之所忧，我必念之；民之所盼，我必行之"。首先耐心倾听群众诉求，然后迅速核实情况，在三个工作日内给予明确答复...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句二（必背！）</div>
+                    <div class="quote-box">江山就是人民，人民就是江山，打江山、守江山，守的是人民的心。</div>
+                    <div><span class="label">出处</span>习近平总书记在庆祝中国共产党成立100周年大会上的讲话</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例：</div>
+                        <p>总书记深刻指出："江山就是人民，人民就是江山"。作为基层公务员，我们的工作直接关系群众切身利益，必须把群众满意作为最高标准...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">三、法治执法类（执法岗必背！）</h2>
+                
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句一（必背！）</div>
+                    <div class="quote-box">法无授权不可为，法定职责必须为。</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例（情景模拟-执法遇阻）：</div>
+                        <p>王总，我理解您的难处，但"法无授权不可为，法定职责必须为"。按照《食品安全法》规定，我们必须对经营场所进行检查，这是为了保障消费者的安全，也是对您负责...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句二（必背！）</div>
+                    <div class="quote-box">执法要有力度，更要有温度。</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例：</div>
+                        <p>在今后的执法工作中，我会坚持"执法要有力度，更要有温度"。对于首次轻微违法，以教育引导为主；对于严重违法，坚决依法查处，维护法律尊严...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句三（必背！）</div>
+                    <div class="quote-box">法律的生命力在于实施，法律的权威也在于实施。</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例：</div>
+                        <p>法律的生命力在于实施。作为市场监管执法人员，我们要严格依法履职，让每一部法律都落到实处，让每一次执法都经得起检验...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">四、实干担当类</h2>
+                
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句一</div>
+                    <div class="quote-box">空谈误国，实干兴邦。</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例：</div>
+                        <p>正如总书记强调的"空谈误国，实干兴邦"。对于这项工作任务，我不会停留在口头表态，而是会制定详细的工作计划，逐项落实...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句二</div>
+                    <div class="quote-box">功成不必在我，功成必定有我。</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例：</div>
+                        <p>对于这项需要长期推进的工作，我会保持"功成不必在我"的境界和"功成必定有我"的担当，一任接着一任干，久久为功...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>金句三（老子名言，2023年株洲真题！）</div>
+                    <div class="quote-box">天下难事，必作于易；天下大事，必作于细。</div>
+                    <div><span class="label">出处</span>《道德经》</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例（2023年株洲真题）：</div>
+                        <p>老子说："天下难事，必作于易；天下大事，必作于细。"市场监管工作涉及千家万户，每一个细节都关系到群众切身利益，必须从细节抓起...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">五、湖南特色类（加分亮点！）</h2>
+                
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>湖南精神（必背！）</div>
+                    <div class="quote-box" style="color:#c41e3a;">吃得苦、霸得蛮、耐得烦</div>
+                    <div style="margin-top:10px;"><span class="label">解读</span>吃得苦：艰苦奋斗；霸得蛮：敢闯敢拼；耐得烦：耐心细致</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例：</div>
+                        <p>作为湖南的基层干部，我会发扬"吃得苦、霸得蛮、耐得烦"的湖南精神，面对困难不退缩，面对挑战敢担当，在一线岗位上干出实绩...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>湖湘文化</div>
+                    <div class="quote-box" style="color:#c41e3a;">心忧天下，敢为人先</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例：</div>
+                        <p>湖湘文化倡导"心忧天下，敢为人先"。在推进市场监管创新工作中，我会敢于打破思维定势，探索新型监管模式...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★</span>湖南基层治理特色</div>
+                    <div class="quote-box" style="color:#c41e3a;">屋场会——不设主席台、不念稿子</div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看用法示例</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">用法示例：</div>
+                        <p>在开展政策宣传时，我会借鉴湖南"屋场会"的经验，不设主席台，不念稿子，用方言和群众拉家常，把政策讲透...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人物板块 -->
+        <div id="renwu" class="content-section" style="display:none;">
+            <div class="section">
+                <h2 class="section-title">一、必背3个人物（覆盖所有话题）</h2>
+                
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>人物一：黄文秀（基层/脱贫/选择）</div>
+                    <div><span class="label">身份</span>广西百色市乐业县百坭村驻村第一书记、北师大硕士</div>
+                    <div style="margin-top:10px;"><span class="label">核心事迹</span></div>
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li>2016年北师大硕士毕业，放弃北京高薪工作，主动回家乡扶贫</li>
+                        <li>遍访全村195户贫困户，绘制贫困户分布图</li>
+                        <li>带领村民发展砂糖橘产业、电商销售，88户418人脱贫</li>
+                        <li style="color:#c41e3a; font-weight:bold;">2019年因公牺牲，年仅30岁</li>
+                    </ul>
+                    <div style="margin-top:10px; background:#fff8dc; padding:10px; border-radius:5px;">
+                        <strong>颁奖词：</strong>有些人从山里走了，就不再回来；你从城里回来，便不再离开。
+                    </div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看答题模板</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">答题模板（自我认知/综合分析）：</div>
+                        <p>黄文秀北师大硕士毕业后，放弃大城市的工作机会，毅然回到家乡担任驻村第一书记，带领88户贫困户脱贫，30岁因公牺牲。她说"只有扎根泥土，才能懂得人民"。这种选择让我深受触动，也坚定了我服务基层的决心...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>人物二：黄旭华（科技/爱国/奉献）</div>
+                    <div><span class="label">身份</span>中国核潜艇之父、共和国勋章获得者</div>
+                    <div style="margin-top:10px;"><span class="label">核心事迹</span></div>
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li>1958年，34岁的黄旭华被秘密召集，从此隐姓埋名30年</li>
+                        <li>在没有任何外援的情况下，用算盘计算数据，研制出中国第一艘核潜艇</li>
+                        <li>为严守国家秘密，30年没回过老家，父亲去世也未能见最后一面</li>
+                        <li style="color:#c41e3a; font-weight:bold;">他说：对国家的忠，就是对父母最大的孝</li>
+                    </ul>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看答题模板</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">答题模板：</div>
+                        <p>正如中国核潜艇之父黄旭华，隐姓埋名三十载，用算盘计算数据，成功研制出中国第一艘核潜艇。他说"对国家的忠，就是对父母最大的孝"。这种舍小家为大家的奉献精神，值得我们每一个人学习...</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★★</span>人物三：毛丽（执法岗必背！）</div>
+                    <div><span class="label">身份</span>山西阳泉市交警、最美女交警</div>
+                    <div style="margin-top:10px;"><span class="label">核心事迹</span></div>
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li>在执法过程中，坚持原则，秉公执法</li>
+                        <li>曾处罚过违规的公安局领导车辆，引起广泛关注</li>
+                        <li style="color:#c41e3a; font-weight:bold;">被称为"铁面交警"，体现法律面前人人平等</li>
+                    </ul>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看答题模板</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">答题模板（2023年株洲真题）：</div>
+                        <p>被称为"最美女交警"的毛丽，在执法过程中坚持原则，曾处罚违规领导的车辆。有人说她没人情味，但正是这种秉公执法的精神，维护了法律的尊严。正如她所说，法律面前人人平等...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">二、备用人物（按需背诵）</h2>
+                
+                <div class="card">
+                    <div class="card-title"><span class="star">★★</span>屠呦呦（坚持/创新）</div>
+                    <div><span class="label">身份</span>中国首位诺贝尔生理学或医学奖获得者</div>
+                    <div style="margin-top:10px;">历经190多次失败，终于从青蒿中提取出青蒿素，挽救了全球特别是发展中国家数百万人的生命。</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★</span>袁隆平（为民/坚守）</div>
+                    <div><span class="label">身份</span>杂交水稻之父</div>
+                    <div style="margin-top:10px;">毕生致力于杂交水稻研究，90岁高龄仍坚持下田。他说："我不在家，就在试验田；不在试验田，就在去试验田的路上。"</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title"><span class="star">★★</span>张桂梅（教育/奉献）</div>
+                    <div><span class="label">身份</span>云南华坪女高校长</div>
+                    <div style="margin-top:10px;">扎根贫困山区40多年，创办免费女子高中，帮助1800多名女孩圆了大学梦。身患20多种疾病，仍坚持每天5点起床陪学生早读。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 政策板块 -->
+        <div id="zhengce" class="content-section" style="display:none;">
+            <div class="section">
+                <h2 class="section-title">一、党的二十大必背要点</h2>
+                
+                <div class="card">
+                    <div class="card-title">三个务必</div>
+                    <div class="quote-box">务必不忘初心、牢记使命；务必谦虚谨慎、艰苦奋斗；务必敢于斗争、善于斗争。</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">五个必由之路</div>
+                    <ul style="margin-left:20px;">
+                        <li>坚持党的全面领导是坚持和发展中国特色社会主义的必由之路</li>
+                        <li>中国特色社会主义是实现中华民族伟大复兴的必由之路</li>
+                        <li>团结奋斗是中国人民创造历史伟业的必由之路</li>
+                        <li>贯彻新发展理念是新时代我国发展壮大的必由之路</li>
+                        <li>全面从严治党是党永葆生机活力、走好新的赶考之路的必由之路</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">二、市场监管核心知识</h2>
+                
+                <div class="card">
+                    <div class="card-title">食品安全法 - 四个最严</div>
+                    <div class="quote-box">最严谨的标准、最严格的监管、最严厉的处罚、最严肃的问责</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">三品一特安全监管</div>
+                    <div><span class="tag">食品</span><span class="tag">药品</span><span class="tag">重点工业产品</span><span class="tag">特种设备</span></div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">721工作法（服务型执法）</div>
+                    <div class="quote-box">70%的问题用服务手段解决，20%的问题用管理手段解决，10%的问题用执法手段解决。</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">三、湖南省情必背</h2>
+                
+                <div class="card">
+                    <div class="card-title">三高四新战略</div>
+                    <div><strong>三个高地：</strong></div>
+                    <ul style="margin-left:20px;">
+                        <li>国家重要先进制造业高地</li>
+                        <li>具有核心竞争力的科技创新高地</li>
+                        <li>内陆地区改革开放高地</li>
+                    </ul>
+                    <div style="margin-top:10px;"><strong>四新使命：</strong>在推动高质量发展上闯出新路子；在构建新发展格局中展现新作为；在推动中部地区崛起和长江经济带发展中彰显新担当；奋力谱写新时代坚持和发展中国特色社会主义的湖南新篇章</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 真题板块 -->
+        <div id="zhenti" class="content-section" style="display:none;">
+            <div class="section">
+                <h2 class="section-title">2023年株洲市面试真题</h2>
+                
+                <div class="card">
+                    <div class="card-title">第一题：老子曰</div>
+                    <div style="background:#f0f8ff; padding:15px; border-radius:5px; margin:10px 0;">
+                        <strong>题目：</strong>老子曰："天下难事，必作于易；天下大事，必作于细。"你怎么理解？
+                    </div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看答题思路</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">答题思路：</div>
+                        <p><strong>1. 释义：</strong>难事从简单做起，大事从细节做起</p>
+                        <p><strong>2. 重要性：</strong>细节决定成败，基础决定高度</p>
+                        <p><strong>3. 结合岗位：</strong>市场监管工作涉及千家万户，每一个细节都关系到群众切身利益</p>
+                        <p><strong>4. 践行：</strong>从日常小事做起，注重细节，精益求精</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">第二题：毛丽交警</div>
+                    <div style="background:#f0f8ff; padding:15px; border-radius:5px; margin:10px 0;">
+                        <strong>题目：</strong>山西交警毛丽在执法过程中惩罚了诸多领导的违规车辆，有人说她"没人情味"，你怎么看？
+                    </div>
+                    <button class="toggle-btn" onclick="toggleContent(this)">查看答题思路</button>
+                    <div class="content-hidden usage">
+                        <div class="usage-title">答题思路：</div>
+                        <p><strong>1. 表明态度：</strong>坚决支持毛丽的做法，这是依法履职的表现</p>
+                        <p><strong>2. 法理分析：</strong>法律面前人人平等，执法必严、违法必究</p>
+                        <p><strong>3. 价值意义：</strong>维护法律尊严、树立执法权威、促进社会公平</p>
+                        <p><strong>4. 澄清误解：</strong>"人情味"不等于放弃原则，公正才是最大的"人情"</p>
+                        <p><strong>5. 自身践行：</strong>学习毛丽精神，坚守法治底线</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">万能答题框架</h2>
+                
+                <div class="card">
+                    <div class="card-title">综合分析题</div>
+                    <ol style="margin-left:20px;">
+                        <li><strong>是什么：</strong>点明本质，表明态度</li>
+                        <li><strong>为什么：</strong>分析原因/意义（多角度）</li>
+                        <li><strong>怎么办：</strong>提出对策</li>
+                        <li><strong>结合自身：</strong>如何践行</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">组织管理题</div>
+                    <ol style="margin-left:20px;">
+                        <li><strong>前期筹备：</strong>调研→方案→专班→宣传</li>
+                        <li><strong>组织实施：</strong>分工→推进→调整→保障</li>
+                        <li><strong>总结提升：</strong>反馈→报告→推广→长效</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">应急应变题</div>
+                    <ol style="margin-left:20px;">
+                        <li><strong>稳定局面：</strong>控制现场→安抚情绪</li>
+                        <li><strong>了解情况：</strong>听取诉求→调查核实</li>
+                        <li><strong>解决问题：</strong>依法依规→分类处理</li>
+                        <li><strong>总结提升：</strong>举一反三→完善机制</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // 隐藏所有section
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            // 显示选中的section
+            document.getElementById(sectionId).style.display = 'block';
+            // 更新按钮状态
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function toggleContent(btn) {
+            const content = btn.nextElementSibling;
+            if (content.classList.contains('content-hidden')) {
+                content.classList.remove('content-hidden');
+                btn.textContent = '收起内容';
+            } else {
+                content.classList.add('content-hidden');
+                btn.textContent = '查看用法示例';
+            }
+        }
+    </script>
+</body>
+</html>
