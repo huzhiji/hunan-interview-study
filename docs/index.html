@@ -3,492 +3,1381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>湖南省考面试每日学习 - 2026-04-09</title>
+    <title>湖南省考面试每日学习</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
         }
-        .container { max-width: 800px; margin: 0 auto; }
-        .header {
-            text-align: center;
+        
+        /* 顶部导航 */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            margin-bottom: 30px;
-            padding: 20px;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
         }
-        .header h1 { font-size: 28px; margin-bottom: 10px; }
-        .header .date { font-size: 16px; opacity: 0.9; }
-        .card {
-            background: white;
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
         }
-        .card-header {
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f0f0f0;
+            gap: 8px;
         }
-        .card-icon { font-size: 28px; margin-right: 12px; }
-        .card-title { font-size: 20px; font-weight: bold; color: #333; }
-        .jinju-item {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-        .jinju-text { font-size: 20px; font-weight: bold; margin-bottom: 12px; line-height: 1.6; }
-        .jinju-meta { font-size: 14px; opacity: 0.9; margin-bottom: 15px; }
-        .jinju-section {
-            background: rgba(255,255,255,0.15);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
-        .jinju-section-title { font-size: 14px; font-weight: bold; margin-bottom: 8px; opacity: 0.95; }
-        .jinju-section-content { font-size: 14px; line-height: 1.8; opacity: 0.95; }
-        .content-text { font-size: 16px; line-height: 2; color: #444; }
-        .section-title {
-            font-size: 17px;
-            font-weight: bold;
-            color: #333;
-            margin: 25px 0 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        .quote {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: #1565c0;
-            line-height: 1.8;
-        }
-        .example-box {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .example-box-title { font-size: 14px; color: #666; margin-bottom: 10px; font-weight: bold; }
-        .example-box-content { font-size: 15px; line-height: 1.9; color: #333; }
-        .tag {
-            display: inline-block;
-            padding: 5px 14px;
-            background: #e9ecef;
-            border-radius: 20px;
-            font-size: 13px;
-            color: #666;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-        .tag.important { background: #ff6b6b; color: white; }
-        .tag.primary { background: #667eea; color: white; }
-        .tips-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .tips-box-title { font-weight: bold; margin-bottom: 10px; }
-        .tips-box-content { font-size: 14px; line-height: 1.9; opacity: 0.95; }
-        .checklist { list-style: none; }
-        .checklist li {
-            padding: 18px;
-            margin-bottom: 12px;
-            background: #f8f9fa;
-            border-radius: 10px;
+        
+        .nav-links {
             display: flex;
-            align-items: flex-start;
-            cursor: pointer;
-            transition: all 0.3s;
+            gap: 8px;
         }
-        .checklist li:hover { background: #e9ecef; }
-        .checklist li.completed { background: #d4edda; opacity: 0.8; }
-        .checklist li.completed span:last-child { text-decoration: line-through; }
-        .checkbox {
-            width: 24px;
-            height: 24px;
-            border: 2px solid #28a745;
-            border-radius: 50%;
-            margin-right: 12px;
+        
+        .nav-link {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        
+        /* 主容器 */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 20px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 24px;
+        }
+        
+        /* 侧边栏 */
+        .sidebar {
+            position: sticky;
+            top: 88px;
+            height: fit-content;
+        }
+        
+        .progress-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .progress-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .progress-ring {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .progress-ring svg {
+            transform: rotate(-90deg);
+        }
+        
+        .progress-ring-bg {
+            fill: none;
+            stroke: var(--border);
+            stroke-width: 8;
+        }
+        
+        .progress-ring-fill {
+            fill: none;
+            stroke: var(--primary);
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+        
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .progress-percent {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .progress-label {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 12px;
+            background: var(--bg);
+            border-radius: 12px;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+        
+        /* 日历 */
+        .calendar-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .calendar-title {
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .calendar-nav {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .calendar-nav button {
+            background: var(--bg);
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text);
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            text-align: center;
+        }
+        
+        .calendar-day-header {
+            font-size: 12px;
+            color: var(--text-light);
+            padding: 8px 0;
+        }
+        
+        .calendar-day {
+            aspect-ratio: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            margin-top: 2px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
         }
-        .checklist li.completed .checkbox { background: #28a745; }
-        .checklist li.completed .checkbox::after {
-            content: "✓";
+        
+        .calendar-day:hover {
+            background: var(--bg);
+        }
+        
+        .calendar-day.today {
+            background: var(--primary);
             color: white;
+            font-weight: 600;
+        }
+        
+        .calendar-day.completed::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            width: 4px;
+            height: 4px;
+            background: var(--success);
+            border-radius: 50%;
+        }
+        
+        .calendar-day.other-month {
+            color: var(--text-light);
+            opacity: 0.5;
+        }
+        
+        /* 主内容区 */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        /* 日期标题 */
+        .date-header {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .date-info h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        
+        .date-info p {
+            color: var(--text-light);
             font-size: 14px;
         }
-        .progress-bar {
-            height: 12px;
-            background: #e9ecef;
-            border-radius: 6px;
-            overflow: hidden;
-            margin-top: 20px;
+        
+        .date-actions {
+            display: flex;
+            gap: 12px;
         }
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #28a745, #20c997);
-            transition: width 0.5s;
-        }
+        
         .btn {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--text);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border);
+        }
+        
+        /* 学习模块 */
+        .module-card {
+            background: var(--card);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .module-header {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .module-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        
+        .module-icon.jinju { background: #fef3c7; }
+        .module-icon.redian { background: #fee2e2; }
+        .module-icon.renwu { background: #dbeafe; }
+        .module-icon.cuoshi { background: #d1fae5; }
+        .module-icon.quiz { background: #f3e8ff; }
+        
+        .module-title {
+            flex: 1;
+        }
+        
+        .module-title h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        
+        .module-title span {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        
+        .module-status {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .module-status.pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .module-status.completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .module-content {
+            padding: 24px;
+        }
+        
+        /* 金句样式 */
+        .jinju-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .jinju-item {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .jinju-number {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--warning);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .jinju-content {
+            font-size: 18px;
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        .jinju-meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        
+        .jinju-tag {
+            font-size: 12px;
+            padding: 4px 10px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 6px;
+            color: #78350f;
+        }
+        
+        .jinju-section {
+            background: rgba(255,255,255,0.5);
+            border-radius: 8px;
+            padding: 14px;
+            margin-top: 12px;
+        }
+        
+        .jinju-section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #78350f;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .jinju-section-content {
+            font-size: 14px;
+            color: #92400e;
+            line-height: 1.7;
+        }
+        
+        /* 热点样式 */
+        .redian-content {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .redian-header {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        
+        .tag {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .tag-red { background: #fee2e2; color: #991b1b; }
+        .tag-blue { background: #dbeafe; color: #1e40af; }
+        .tag-green { background: #d1fae5; color: #065f46; }
+        .tag-purple { background: #f3e8ff; color: #6b21a8; }
+        
+        .content-block h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .content-block p, .content-block li {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        
+        .content-block ul {
+            padding-left: 20px;
+        }
+        
+        .content-block li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        
+        .quote-box {
+            background: #dbeafe;
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #1e40af;
+        }
+        
+        /* 人物样式 */
+        .renwu-header {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .renwu-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+        
+        .renwu-info h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        
+        .renwu-info p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        /* 测验样式 */
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .quiz-question {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .quiz-number {
             display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .quiz-text {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .quiz-option {
+            padding: 14px 16px;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        
+        .quiz-option:hover {
+            border-color: var(--primary);
+            background: #f5f3ff;
+        }
+        
+        .quiz-option.correct {
+            border-color: var(--success);
+            background: #ecfdf5;
+        }
+        
+        .quiz-option.wrong {
+            border-color: var(--danger);
+            background: #fef2f2;
+        }
+        
+        .quiz-answer {
+            margin-top: 16px;
+            padding: 16px;
+            background: #ecfdf5;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .quiz-answer.show {
+            display: block;
+        }
+        
+        .quiz-answer-title {
+            font-weight: 600;
+            color: var(--success);
+            margin-bottom: 8px;
+        }
+        
+        /* 完成按钮 */
+        .complete-section {
+            padding: 20px 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .complete-btn {
+            padding: 12px 28px;
+            background: var(--success);
             color: white;
             border: none;
             border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            text-decoration: none;
-        }
-        .footer {
-            text-align: center;
-            color: white;
-            padding: 30px;
             font-size: 15px;
-        }
-        .nav-links {
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
         }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 8px;
-            transition: background 0.3s;
+        
+        .complete-btn:hover {
+            background: #059669;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
         }
-        .nav-links a:hover { background: rgba(255,255,255,0.3); }
-        @media (max-width: 600px) {
-            .container { padding: 10px; }
-            .card { padding: 20px; }
-            .header h1 { font-size: 24px; }
+        
+        .complete-btn.completed {
+            background: var(--text-light);
+            cursor: default;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                order: 2;
+            }
+            
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>📚 湖南省考面试每日学习</h1>
-            <div class="date">2026-04-09 · 第1天</div>
+    <!-- 顶部导航 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>📚</span>
+                <span>湖南省考面试学习</span>
+            </div>
             <div class="nav-links">
-                <a href="index.html">今日任务</a>
-                <a href="archive.html">历史记录</a>
-                <a href="about.html">关于</a>
+                <a href="#today" class="nav-link active">今日学习</a>
+                <a href="#archive" class="nav-link">历史记录</a>
+                <a href="#stats" class="nav-link">学习统计</a>
+                <a href="#about" class="nav-link">关于</a>
             </div>
         </div>
+    </nav>
 
-        <!-- 金句卡片 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-icon">💎</span>
-                <span class="card-title">今日必背金句（2句）</span>
-            </div>
-            
-            <div class="jinju-item">
-                <div class="jinju-text">"江山就是人民，人民就是江山"</div>
-                <div class="jinju-meta">⭐⭐⭐⭐⭐ 为民服务 · 习近平总书记在党史学习教育动员大会上的讲话</div>
-                
-                <div class="jinju-section">
-                    <div class="jinju-section-title">📖 出处背景</div>
-                    <div class="jinju-section-content">习近平总书记在党史学习教育动员大会上的讲话（2021年2月20日）。这句话深刻阐述了中国共产党与人民的血肉联系，体现了以人民为中心的发展思想。</div>
+    <!-- 主容器 -->
+    <div class="main-container">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <!-- 进度卡片 -->
+            <div class="progress-card">
+                <div class="progress-title">
+                    <span>📊</span>
+                    <span>学习进度</span>
                 </div>
                 
-                <div class="jinju-section">
-                    <div class="jinju-section-title">💡 深度解析</div>
-                    <div class="jinju-section-content">"江山"指国家政权，"人民"是江山的根基。这句话强调：人民是历史的创造者，是决定党和国家前途命运的根本力量。打江山、守江山，守的是人民的心。</div>
-                </div>
-                
-                <div class="jinju-section">
-                    <div class="jinju-section-title">🎯 适用场景</div>
-                    <div class="jinju-section-content">群众工作类、民生问题类、服务型政府建设类题目开头，表达对人民立场的坚守。</div>
-                </div>
-                
-                <div class="jinju-section">
-                    <div class="jinju-section-title">✍️ 答题示例</div>
-                    <div class="jinju-section-content">"面对群众的急难愁盼问题，我们要始终牢记：江山就是人民，人民就是江山。只有把群众的事当成自己的事，才能真正做到为民解忧、为民谋利。"</div>
-                </div>
-            </div>
-            
-            <div class="jinju-item">
-                <div class="jinju-text">"民之所忧，我必念之；民之所盼，我必行之"</div>
-                <div class="jinju-meta">⭐⭐⭐⭐⭐ 为民服务 · 习近平主席2022年新年贺词</div>
-                
-                <div class="jinju-section">
-                    <div class="jinju-section-title">📖 出处背景</div>
-                    <div class="jinju-section-content">习近平主席2022年新年贺词。这句话体现了中国共产党人始终把人民放在心中最高位置，对人民承诺的庄严宣示。</div>
-                </div>
-                
-                <div class="jinju-section">
-                    <div class="jinju-section-title">💡 深度解析</div>
-                    <div class="jinju-section-content">"忧"是群众的困难疾苦，"盼"是群众的美好向往。这句话强调：要把群众的"急难愁盼"作为工作的出发点和落脚点，做到民有所呼、我有所应。</div>
-                </div>
-                
-                <div class="jinju-section">
-                    <div class="jinju-section-title">🎯 适用场景</div>
-                    <div class="jinju-section-content">民生类、服务型政府建设类、基层工作类题目，体现主动作为、为民服务的态度。</div>
-                </div>
-                
-                <div class="jinju-section">
-                    <div class="jinju-section-title">✍️ 答题示例</div>
-                    <div class="jinju-section-content">"作为市场监管人员，面对群众对食品安全的担忧，我们要牢记：民之所忧，我必念之；民之所盼，我必行之。用最严格的监管、最严厉的处罚，守护群众'舌尖上的安全'。"</div>
-                </div>
-            </div>
-            
-            <div class="tips-box">
-                <div class="tips-box-title">🧠 记忆口诀</div>
-                <div class="tips-box-content">金句1记"江山人民"，金句2记"忧念盼行"。两句都出自习近平总书记，都强调以人民为中心，可以搭配使用：先讲"江山就是人民"立论，再用"民之所忧我必念之"展开。</div>
-            </div>
-        </div>
-
-        <!-- 热点卡片 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-icon">🔥</span>
-                <span class="card-title">今日热点事件</span>
-            </div>
-            
-            <div class="content-text">
-                <div style="margin-bottom: 15px;">
-                    <span class="tag important">食品安全</span>
-                    <span class="tag">2024年3月</span>
-                    <span class="tag primary">315晚会</span>
-                </div>
-                
-                <h3 style="margin: 15px 0; color: #333; font-size: 20px;">315晚会曝光预制菜乱象</h3>
-                
-                <div class="section-title">📋 事件概述</div>
-                <p>2024年3月15日，央视315晚会曝光安徽阜阳部分企业使用未经严格处理的槽头肉（含淋巴结、脂肪瘤等）制作梅菜扣肉预制菜，引发社会广泛关注。涉事企业包括春天食品有限公司、东辉食品科技有限公司等。事件曝光后，安徽省市场监管部门连夜查处涉事企业，开展预制菜行业专项整治行动。</p>
-                
-                <div class="section-title">🔍 核心要点</div>
-                <ul style="margin-left: 25px; line-height: 2.2;">
-                    <li><strong>食品安全是民生底线</strong>——预制菜作为新兴业态，不能成为监管盲区</li>
-                    <li><strong>全链条监管的重要性</strong>——从原料采购到生产加工，每个环节都不能放松</li>
-                    <li><strong>企业主体责任</strong>——不能为了降低成本而牺牲食品安全</li>
-                    <li><strong>新业态规范发展</strong>——预制菜行业需要标准先行、监管跟进</li>
-                </ul>
-                
-                <div class="section-title">💼 面试应用</div>
-                <p>可用于以下类型题目：</p>
-                <ul style="margin-left: 25px; line-height: 1.9; margin-top: 8px;">
-                    <li>食品安全监管类题目</li>
-                    <li>新业态监管（预制菜、直播带货等）</li>
-                    <li>消费者权益保护</li>
-                    <li>媒体监督与政府回应</li>
-                </ul>
-                
-                <div class="example-box">
-                    <div class="example-box-title">📝 答题示例框架</div>
-                    <div class="example-box-content">"315晚会曝光的预制菜乱象，反映出食品安全监管面临的挑战。作为市场监管人员，我认为要从三个方面着手：一是完善标准体系，制定预制菜行业规范；二是强化源头治理，建立从农田到餐桌的全链条监管；三是压实企业主体责任，对违法行为零容忍。"</div>
-                </div>
-                
-                <div class="quote">
-                    <strong>启示：</strong>监管部门要加强源头治理，建立健全从农田到餐桌的全链条监管体系，用最严谨的标准、最严格的监管、最严厉的处罚、最严肃的问责，确保人民群众"舌尖上的安全"。
-                </div>
-            </div>
-        </div>
-
-        <!-- 人物卡片 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-icon">⭐</span>
-                <span class="card-title">今日榜样人物</span>
-            </div>
-            
-            <div class="content-text">
-                <h3 style="margin-bottom: 15px; color: #333; font-size: 20px;">黄文秀 —— 全国脱贫攻坚楷模</h3>
-                
-                <div style="margin-bottom: 15px;">
-                    <span class="tag">广西百色</span>
-                    <span class="tag primary">时代楷模</span>
-                    <span class="tag important">七一勋章</span>
-                    <span class="tag">全国脱贫攻坚楷模</span>
-                </div>
-                
-                <div class="section-title">📖 人物简介</div>
-                <p>黄文秀（1989-2019），壮族，广西田阳人，中共党员。北京师范大学法学硕士毕业后，放弃大城市高薪工作机会，主动请缨回到家乡百色革命老区，担任乐业县新化镇百坭村驻村第一书记。</p>
-                
-                <div class="section-title">🏆 主要事迹</div>
-                <ul style="margin-left: 25px; line-height: 2; margin-top: 10px;">
-                    <li><strong>扎根基层：</strong>走遍全村195户贫困户，绘制"民情地图"</li>
-                    <li><strong>发展产业：</strong>带领村民发展砂糖橘、油茶、蜂蜜等产业</li>
-                    <li><strong>改善民生：</strong>推动修建道路、安装路灯、建设蓄水池</li>
-                    <li><strong>脱贫成效：</strong>使贫困发生率从22.88%降至2.71%</li>
-                    <li><strong>因公殉职：</strong>2019年6月17日，在返回工作岗位途中遭遇山洪，年仅30岁</li>
-                </ul>
-                
-                <div class="quote" style="font-size: 18px; text-align: center;">
-                    "只有扎根泥土，才能懂得人民"
-                </div>
-                
-                <div class="section-title">🎯 适用话题</div>
-                <div style="margin-top: 10px;">
-                    <span class="tag">基层工作</span>
-                    <span class="tag">脱贫攻坚</span>
-                    <span class="tag">人生选择</span>
-                    <span class="tag">初心使命</span>
-                    <span class="tag">青年担当</span>
-                    <span class="tag">奉献精神</span>
-                </div>
-                
-                <div class="example-box">
-                    <div class="example-box-title">📝 答题应用示例</div>
-                    <div class="example-box-content">
-                        <p style="margin-bottom: 10px;"><strong>题目：</strong>你为什么报考基层公务员？</p>
-                        <p><strong>回答：</strong>"黄文秀北师大硕士毕业后，放弃大城市工作机会，选择回乡扶贫。她说'只有扎根泥土，才能懂得人民'，用30岁的生命诠释了共产党人的初心。我选择报考基层，正是希望像她一样，到祖国最需要的地方去，在服务群众中实现人生价值。"</p>
+                <div class="progress-ring">
+                    <svg width="120" height="120">
+                        <circle class="progress-ring-bg" cx="60" cy="60" r="52"/>
+                        <circle class="progress-ring-fill" cx="60" cy="60" r="52" 
+                                stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+                    </svg>
+                    <div class="progress-text">
+                        <div class="progress-percent" id="totalProgress">0%</div>
+                        <div class="progress-label">总进度</div>
                     </div>
                 </div>
                 
-                <div class="tips-box">
-                    <div class="tips-box-title">💡 记忆要点</div>
-                    <div class="tips-box-content">记准三要素：<strong>北师大硕士</strong>（高学历却选择基层）、<strong>驻村第一书记</strong>（身份）、<strong>30岁因公殉职</strong>（感人结局）。语录必背："只有扎根泥土，才能懂得人民"。</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="statJinju">0</div>
+                        <div class="stat-label">金句</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="statRedian">0</div>
+                        <div class="stat-label">热点</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="statRenwu">0</div>
+                        <div class="stat-label">人物</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="statCuoshi">0</div>
+                        <div class="stat-label">措施</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- 措施卡片 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-icon">📋</span>
-                <span class="card-title">今日政府措施</span>
             </div>
             
-            <div class="content-text">
-                <h3 style="margin-bottom: 15px; color: #333; font-size: 20px;">四下基层</h3>
-                
-                <div style="margin-bottom: 15px;">
-                    <span class="tag primary">群众路线</span>
-                    <span class="tag">调查研究</span>
-                    <span class="tag">1988年首创</span>
-                    <span class="tag important">福建宁德</span>
+            <!-- 日历 -->
+            <div class="calendar-card">
+                <div class="calendar-header">
+                    <span class="calendar-title">2026年4月</span>
+                    <div class="calendar-nav">
+                        <button>‹</button>
+                        <button>›</button>
+                    </div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-day-header">日</div>
+                    <div class="calendar-day-header">一</div>
+                    <div class="calendar-day-header">二</div>
+                    <div class="calendar-day-header">三</div>
+                    <div class="calendar-day-header">四</div>
+                    <div class="calendar-day-header">五</div>
+                    <div class="calendar-day-header">六</div>
+                    
+                    <div class="calendar-day other-month">30</div>
+                    <div class="calendar-day other-month">31</div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day">3</div>
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div>
+                    <div class="calendar-day">6</div>
+                    <div class="calendar-day">7</div>
+                    <div class="calendar-day">8</div>
+                    <div class="calendar-day today">9</div>
+                    <div class="calendar-day">10</div>
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day">12</div>
+                    <div class="calendar-day">13</div>
+                    <div class="calendar-day">14</div>
+                    <div class="calendar-day">15</div>
+                    <div class="calendar-day">16</div>
+                    <div class="calendar-day">17</div>
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day">19</div>
+                    <div class="calendar-day">20</div>
+                    <div class="calendar-day">21</div>
+                    <div class="calendar-day">22</div>
+                    <div class="calendar-day">23</div>
+                    <div class="calendar-day">24</div>
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+                    <div class="calendar-day">27</div>
+                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">29</div>
+                    <div class="calendar-day">30</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="content-area">
+            <!-- 日期标题 -->
+            <div class="date-header">
+                <div class="date-info">
+                    <h1>📅 2026年4月9日</h1>
+                    <p>学习第 1 天 · 今日任务待完成</p>
+                </div>
+                <div class="date-actions">
+                    <button class="btn btn-secondary" onclick="showYesterday()">
+                        <span>‹</span> 昨天
+                    </button>
+                    <button class="btn btn-primary" onclick="showTomorrow()">
+                        明天 <span>›</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 金句模块 -->
+            <div class="module-card" id="module-jinju">
+                <div class="module-header">
+                    <div class="module-icon jinju">💎</div>
+                    <div class="module-title">
+                        <h3>今日必背金句</h3>
+                        <span>2句 · 预计学习时间 15分钟</span>
+                    </div>
+                    <div class="module-status pending" id="status-jinju">待学习</div>
                 </div>
                 
-                <div class="section-title">📖 政策背景</div>
-                <p>"四下基层"是习近平总书记在福建宁德工作期间（1988-1990年）大力倡导并身体力行形成的工作方法和工作制度。35年来，这一制度从宁德走向全国，成为党的群众路线的实践创新。</p>
-                
-                <div class="section-title">📋 具体内容</div>
-                <div class="example-box">
-                    <div class="example-box-content">
-                        <p style="margin-bottom: 8px;"><strong>1. 宣传党的路线方针政策下基层</strong>——让党的声音传到群众心坎上</p>
-                        <p style="margin-bottom: 8px;"><strong>2. 调查研究下基层</strong>——在一线掌握实情、发现问题</p>
-                        <p style="margin-bottom: 8px;"><strong>3. 信访接待下基层</strong>——变群众上访为领导下访</p>
-                        <p><strong>4. 现场办公下基层</strong>——在一线解决问题、推动工作</p>
+                <div class="module-content">
+                    <div class="jinju-list">
+                        <div class="jinju-item">
+                            <div class="jinju-number">1</div>
+                            <div class="jinju-content">"江山就是人民，人民就是江山"</div>
+                            <div class="jinju-meta">
+                                <span class="jinju-tag">⭐⭐⭐⭐⭐</span>
+                                <span class="jinju-tag">为民服务</span>
+                                <span class="jinju-tag">党史学习教育动员大会</span>
+                            </div>
+                            
+                            <div class="jinju-section">
+                                <div class="jinju-section-title">📖 出处背景</div>
+                                <div class="jinju-section-content">
+                                    习近平总书记在党史学习教育动员大会上的讲话（2021年2月20日）。这句话深刻阐述了中国共产党与人民的血肉联系，体现了以人民为中心的发展思想。
+                                </div>
+                            </div>
+                            
+                            <div class="jinju-section">
+                                <div class="jinju-section-title">💡 深度解析</div>
+                                <div class="jinju-section-content">
+                                    "江山"指国家政权，"人民"是江山的根基。这句话强调：人民是历史的创造者，是决定党和国家前途命运的根本力量。打江山、守江山，守的是人民的心。
+                                </div>
+                            </div>
+                            
+                            <div class="jinju-section">
+                                <div class="jinju-section-title">🎯 适用场景</div>
+                                <div class="jinju-section-content">
+                                    群众工作类、民生问题类、服务型政府建设类题目开头，表达对人民立场的坚守。
+                                </div>
+                            </div>
+                            
+                            <div class="jinju-section">
+                                <div class="jinju-section-title">✍️ 答题示例</div>
+                                <div class="jinju-section-content">
+                                    "面对群众的急难愁盼问题，我们要始终牢记：江山就是人民，人民就是江山。只有把群众的事当成自己的事，才能真正做到为民解忧、为民谋利。"
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="jinju-item">
+                            <div class="jinju-number">2</div>
+                            <div class="jinju-content">"民之所忧，我必念之；民之所盼，我必行之"</div>
+                            <div class="jinju-meta">
+                                <span class="jinju-tag">⭐⭐⭐⭐⭐</span>
+                                <span class="jinju-tag">为民服务</span>
+                                <span class="jinju-tag">2022年新年贺词</span>
+                            </div>
+                            
+                            <div class="jinju-section">
+                                <div class="jinju-section-title">📖 出处背景</div>
+                                <div class="jinju-section-content">
+                                    习近平主席2022年新年贺词。这句话体现了中国共产党人始终把人民放在心中最高位置，对人民承诺的庄严宣示。
+                                </div>
+                            </div>
+                            
+                            <div class="jinju-section">
+                                <div class="jinju-section-title">💡 深度解析</div>
+                                <div class="jinju-section-content">
+                                    "忧"是群众的困难疾苦，"盼"是群众的美好向往。这句话强调：要把群众的"急难愁盼"作为工作的出发点和落脚点，做到民有所呼、我有所应。
+                                </div>
+                            </div>
+                            
+                            <div class="jinju-section">
+                                <div class="jinju-section-title">🎯 适用场景</div>
+                                <div class="jinju-section-content">
+                                    民生类、服务型政府建设类、基层工作类题目，体现主动作为、为民服务的态度。
+                                </div>
+                            </div>
+                            
+                            <div class="jinju-section">
+                                <div class="jinju-section-title">✍️ 答题示例</div>
+                                <div class="jinju-section-content">
+                                    "作为市场监管人员，面对群众对食品安全的担忧，我们要牢记：民之所忧，我必念之；民之所盼，我必行之。用最严格的监管、最严厉的处罚，守护群众'舌尖上的安全'。"
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="section-title">💡 重要意义</div>
-                <ul style="margin-left: 25px; line-height: 2;">
-                    <li>是践行党的群众路线的生动体现</li>
-                    <li>是改进工作作风、密切联系群众的重要载体</li>
-                    <li>是破解形式主义、官僚主义的有效方法</li>
-                    <li>是提升基层治理能力的实践路径</li>
-                </ul>
-                
-                <div class="section-title">🎯 应用场景</div>
-                <div style="margin-top: 10px;">
-                    <span class="tag">调查研究</span>
-                    <span class="tag">群众路线</span>
-                    <span class="tag">作风建设</span>
-                    <span class="tag">基层治理</span>
-                    <span class="tag">信访工作</span>
+                <div class="complete-section">
+                    <span style="color: var(--text-light); font-size: 14px;">完成学习后点击按钮记录进度</span>
+                    <button class="complete-btn" onclick="completeModule('jinju')">
+                        <span>✓</span> 标记完成
+                    </button>
+                </div>
+            </div>
+
+            <!-- 热点模块 -->
+            <div class="module-card" id="module-redian">
+                <div class="module-header">
+                    <div class="module-icon redian">🔥</div>
+                    <div class="module-title">
+                        <h3>今日热点事件</h3>
+                        <span>1个 · 预计学习时间 10分钟</span>
+                    </div>
+                    <div class="module-status pending" id="status-redian">待学习</div>
                 </div>
                 
-                <div class="example-box">
-                    <div class="example-box-title">📝 答题示例</div>
-                    <div class="example-box-content">
-                        <p style="margin-bottom: 10px;"><strong>题目：</strong>如何理解"从群众中来，到群众中去"？</p>
-                        <p><strong>回答：</strong>"这要求我们坚持'四下基层'，把办公桌搬到群众家门口。宣传政策下基层，让群众听得懂、能领会；调查研究下基层，掌握第一手资料；信访接待下基层，把矛盾化解在萌芽；现场办公下基层，在一线解决问题。只有这样，才能真正做到从群众中来、到群众中去。"</p>
+                <div class="module-content">
+                    <div class="redian-content">
+                        <div class="redian-header">
+                            <span class="tag tag-red">食品安全</span>
+                            <span class="tag tag-blue">2024年3月</span>
+                            <span class="tag tag-purple">315晚会</span>
+                        </div>
+                        
+                        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">315晚会曝光预制菜乱象</h3>
+                        
+                        <div class="content-block">
+                            <h4><span>📋</span> 事件概述</h4>
+                            <p>2024年3月15日，央视315晚会曝光安徽阜阳部分企业使用未经严格处理的槽头肉（含淋巴结、脂肪瘤等）制作梅菜扣肉预制菜，引发社会广泛关注。涉事企业包括春天食品有限公司、东辉食品科技有限公司等。事件曝光后，安徽省市场监管部门连夜查处涉事企业，开展预制菜行业专项整治行动。</p>
+                        </div>
+                        
+                        <div class="content-block">
+                            <h4><span>🔍</span> 核心要点</h4>
+                            <ul>
+                                <li><strong>食品安全是民生底线</strong>——预制菜作为新兴业态，不能成为监管盲区</li>
+                                <li><strong>全链条监管的重要性</strong>——从原料采购到生产加工，每个环节都不能放松</li>
+                                <li><strong>企业主体责任</strong>——不能为了降低成本而牺牲食品安全</li>
+                                <li><strong>新业态规范发展</strong>——预制菜行业需要标准先行、监管跟进</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="content-block">
+                            <h4><span>💼</span> 面试应用</h4>
+                            <p>可用于以下类型题目：食品安全监管类题目、新业态监管（预制菜、直播带货等）、消费者权益保护、媒体监督与政府回应</p>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <strong>📝 答题示例框架：</strong><br>
+                            "315晚会曝光的预制菜乱象，反映出食品安全监管面临的挑战。作为市场监管人员，我认为要从三个方面着手：一是完善标准体系，制定预制菜行业规范；二是强化源头治理，建立从农田到餐桌的全链条监管；三是压实企业主体责任，对违法行为零容忍。"
+                        </div>
+                        
+                        <div class="quote-box">
+                            <strong>💡 启示：</strong>监管部门要加强源头治理，建立健全从农田到餐桌的全链条监管体系，用最严谨的标准、最严格的监管、最严厉的处罚、最严肃的问责，确保人民群众"舌尖上的安全"。
+                        </div>
                     </div>
                 </div>
                 
-                <div class="quote">
-                    <strong>核心要义：</strong>把群众的事当成自己的事，在一线发现问题、解决问题，真正做到知民情、解民忧、暖民心。
+                <div class="complete-section">
+                    <span style="color: var(--text-light); font-size: 14px;">完成学习后点击按钮记录进度</span>
+                    <button class="complete-btn" onclick="completeModule('redian')">
+                        <span>✓</span> 标记完成
+                    </button>
                 </div>
             </div>
-        </div>
 
-        <!-- 任务清单 -->
-        <div class="card">
-            <div class="card-header">
-                <span class="card-icon">✅</span>
-                <span class="card-title">今日学习任务清单</span>
+            <!-- 人物模块 -->
+            <div class="module-card" id="module-renwu">
+                <div class="module-header">
+                    <div class="module-icon renwu">⭐</div>
+                    <div class="module-title">
+                        <h3>今日榜样人物</h3>
+                        <span>1位 · 预计学习时间 10分钟</span>
+                    </div>
+                    <div class="module-status pending" id="status-renwu">待学习</div>
+                </div>
+                
+                <div class="module-content">
+                    <div class="renwu-header">
+                        <div class="renwu-avatar">👩</div>
+                        <div class="renwu-info">
+                            <h4>黄文秀</h4>
+                            <p>全国脱贫攻坚楷模 · 广西百色</p>
+                            <div>
+                                <span class="tag tag-blue">时代楷模</span>
+                                <span class="tag tag-red">七一勋章</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4><span>📖</span> 人物简介</h4>
+                        <p>黄文秀（1989-2019），壮族，广西田阳人，中共党员。北京师范大学法学硕士毕业后，放弃大城市高薪工作机会，主动请缨回到家乡百色革命老区，担任乐业县新化镇百坭村驻村第一书记。</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4><span>🏆</span> 主要事迹</h4>
+                        <ul>
+                            <li><strong>扎根基层：</strong>走遍全村195户贫困户，绘制"民情地图"</li>
+                            <li><strong>发展产业：</strong>带领村民发展砂糖橘、油茶、蜂蜜等产业</li>
+                            <li><strong>改善民生：</strong>推动修建道路、安装路灯、建设蓄水池</li>
+                            <li><strong>脱贫成效：</strong>使贫困发生率从22.88%降至2.71%</li>
+                            <li><strong>因公殉职：</strong>2019年6月17日，在返回工作岗位途中遭遇山洪，年仅30岁</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="quote-box" style="text-align: center; font-size: 18px;">
+                        "只有扎根泥土，才能懂得人民"
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4><span>🎯</span> 适用话题</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="tag tag-green">基层工作</span>
+                            <span class="tag tag-green">脱贫攻坚</span>
+                            <span class="tag tag-blue">人生选择</span>
+                            <span class="tag tag-purple">初心使命</span>
+                            <span class="tag tag-red">青年担当</span>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        <strong>📝 答题应用示例：</strong><br>
+                        <strong>题目：</strong>你为什么报考基层公务员？<br><br>
+                        <strong>回答：</strong>"黄文秀北师大硕士毕业后，放弃大城市工作机会，选择回乡扶贫。她说'只有扎根泥土，才能懂得人民'，用30岁的生命诠释了共产党人的初心。我选择报考基层，正是希望像她一样，到祖国最需要的地方去，在服务群众中实现人生价值。"
+                    </div>
+                    
+                    <div class="content-block" style="background: #f0fdf4; padding: 16px; border-radius: 10px;">
+                        <h4><span>💡</span> 记忆要点</h4>
+                        <p>记准三要素：<strong>北师大硕士</strong>（高学历却选择基层）、<strong>驻村第一书记</strong>（身份）、<strong>30岁因公殉职</strong>（感人结局）。语录必背："只有扎根泥土，才能懂得人民"。</p>
+                    </div>
+                </div>
+                
+                <div class="complete-section">
+                    <span style="color: var(--text-light); font-size: 14px;">完成学习后点击按钮记录进度</span>
+                    <button class="complete-btn" onclick="completeModule('renwu')">
+                        <span>✓</span> 标记完成
+                    </button>
+                </div>
             </div>
-            
-            <ul class="checklist" id="checklist">
-                <li onclick="toggleCheck(this)">
-                    <span class="checkbox"></span>
-                    <span>背诵金句2句（能完整复述，记住出处和用法）</span>
-                </li>
-                <li onclick="toggleCheck(this)">
-                    <span class="checkbox"></span>
-                    <span>复述热点事件（时间、内容、核心要点、启示）</span>
-                </li>
-                <li onclick="toggleCheck(this)">
-                    <span class="checkbox"></span>
-                    <span>记住人物三要素（事迹、语录、适用话题）</span>
-                </li>
-                <li onclick="toggleCheck(this)">
-                    <span class="checkbox"></span>
-                    <span>理解政府措施含义和应用</span>
-                </li>
-                <li onclick="toggleCheck(this)">
-                    <span class="checkbox"></span>
-                    <span>尝试用今日素材回答一道模拟题</span>
-                </li>
-            </ul>
-            
-            <div class="progress-bar">
-                <div class="progress-fill" id="progress" style="width: 0%"></div>
-            </div>
-            <div style="text-align: center; margin-top: 10px; color: #666;">
-                完成进度：<span id="progressText">0/5</span>
-            </div>
-        </div>
 
-        <div class="footer">
-            <p>💪 坚持就是胜利！每天进步一点点，面试成功在眼前！</p>
-            <p style="margin-top: 10px; font-size: 13px; opacity: 0.8;">
-                湖南省考株洲市市场监督管理局面试备考
-            </p>
-        </div>
+            <!-- 措施模块 -->
+            <div class="module-card" id="module-cuoshi">
+                <div class="module-header">
+                    <div class="module-icon cuoshi">📋</div>
+                    <div class="module-title">
+                        <h3>今日政府措施</h3>
+                        <span>1个 · 预计学习时间 10分钟</span>
+                    </div>
+                    <div class="module-status pending" id="status-cuoshi">待学习</div>
+                </div>
+                
+                <div class="module-content">
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <span class="tag tag-blue">群众路线</span>
+                        <span class="tag tag-green">调查研究</span>
+                        <span class="tag tag-purple">1988年首创</span>
+                        <span class="tag tag-red">福建宁德</span>
+                    </div>
+                    
+                    <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">四下基层</h3>
+                    
+                    <div class="content-block">
+                        <h4><span>📖</span> 政策背景</h4>
+                        <p>"四下基层"是习近平总书记在福建宁德工作期间（1988-1990年）大力倡导并身体力行形成的工作方法和工作制度。35年来，这一制度从宁德走向全国，成为党的群众路线的实践创新。</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4><span>📋</span> 具体内容</h4>
+                        <div style="display: grid; gap: 12px;">
+                            <div style="background: #f8fafc; padding: 16px; border-radius: 10px; border-left: 4px solid var(--primary);">
+                                <strong>1. 宣传党的路线方针政策下基层</strong><br>
+                                <span style="color: var(--text-light);">让党的声音传到群众心坎上</span>
+                            </div>
+                            <div style="background: #f8fafc; padding: 16px; border-radius: 10px; border-left: 4px solid var(--success);">
+                                <strong>2. 调查研究下基层</strong><br>
+                                <span style="color: var(--text-light);">在一线掌握实情、发现问题</span>
+                            </div>
+                            <div style="background: #f8fafc; padding: 16px; border-radius: 10px; border-left: 4px solid var(--warning);">
+                                <strong>3. 信访接待下基层</strong><br>
+                                <span style="color: var(--text-light);">变群众上访为领导下访</span>
+                            </div>
+                            <div style="background: #f8fafc; padding: 16px; border-radius: 10px; border-left: 4px solid var(--secondary);">
+                                <strong>4. 现场办公下基层</strong><br>
+                                <span style="color: var(--text-light);">在一线解决问题、推动工作</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4><span>💡</span> 重要意义</h4>
+                        <ul>
+                            <li>是践行党的群众路线的生动体现</li>
+                            <li>是改进工作作风、密切联系群众的重要载体</li>
+                            <li>是破解形式主义、官僚主义的有效方法</li>
+                            <li>是提升基层治理能力的实践路径</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4><span>🎯</span> 应用场景</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="tag tag-green">调查研究</span>
+                            <span class="tag tag-blue">群众路线</span>
+                            <span class="tag tag-purple">作风建设</span>
+                            <span class="tag tag-red">基层治理</span>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        <strong>📝 答题示例：</strong><br>
+                        <strong>题目：</strong>如何理解"从群众中来，到群众中去"？<br><br>
+                        <strong>回答：</strong>"这要求我们坚持'四下基层'，把办公桌搬到群众家门口。宣传政策下基层，让群众听得懂、能领会；调查研究下基层，掌握第一手资料；信访接待下基层，把矛盾化解在萌芽；现场办公下基层，在一线解决问题。只有这样，才能真正做到从群众中来、到群众中去。"
+                    </div>
+                </div>
+                
+                <div class="complete-section">
+                    <span style="color: var(--text-light); font-size: 14px;">完成学习后点击按钮记录进度</span>
+                    <button class="complete-btn" onclick="completeModule('cuoshi')">
+                        <span>✓</span> 标记完成
+                    </button>
+                </div>
+            </div>
+
+            <!-- 测验模块 -->
+            <div class="module-card" id="module-quiz">
+                <div class="module-header">
+                    <div class="module-icon quiz">📝</div>
+                    <div class="module-title">
+                        <h3>今日小测验</h3>
+                        <span>5题 · 检验学习效果</span>
+                    </div>
+                    <div class="module-status pending" id="status-quiz">待完成</div>
+                </div>
+                
+                <div class="module-content">
+                    <div class="quiz-container">
+                        <div class="quiz-question" data-answer="B">
+                            <div class="quiz-number">1</div>
+                            <div class="quiz-text">"江山就是人民，人民就是江山"出自哪次讲话？</div>
+                            <div class="quiz-options">
+                                <div class="quiz-option" onclick="selectOption(this, 'A')">A. 2022年新年贺词</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'B')">B. 党史学习教育动员大会</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'C')">C. 十八届四中全会</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'D')">D. 中央经济工作会议</div>
+                            </div>
+                            <div class="quiz-answer">
+                                <div class="quiz-answer-title">✓ 正确答案：B</div>
+                                <div>习近平总书记在党史学习教育动员大会上的讲话（2021年2月20日）。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question" data-answer="C">
+                            <div class="quiz-number">2</div>
+                            <div class="quiz-text">315晚会曝光的预制菜乱象主要涉及什么问题？</div>
+                            <div class="quiz-options">
+                                <div class="quiz-option" onclick="selectOption(this, 'A')">A. 价格欺诈</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'B')">B. 虚假宣传</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'C')">C. 使用槽头肉制作</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'D')">D. 过期原料</div>
+                            </div>
+                            <div class="quiz-answer">
+                                <div class="quiz-answer-title">✓ 正确答案：C</div>
+                                <div>曝光的是使用未经严格处理的槽头肉（含淋巴结、脂肪瘤等）制作梅菜扣肉预制菜。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question" data-answer="A">
+                            <div class="quiz-number">3</div>
+                            <div class="quiz-text">黄文秀的经典语录是什么？</div>
+                            <div class="quiz-options">
+                                <div class="quiz-option" onclick="selectOption(this, 'A')">A. "只有扎根泥土，才能懂得人民"</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'B')">B. "功成不必在我，功成必定有我"</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'C')">C. "民之所忧，我必念之"</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'D')">D. "路虽远，行则将至"</div>
+                            </div>
+                            <div class="quiz-answer">
+                                <div class="quiz-answer-title">✓ 正确答案：A</div>
+                                <div>黄文秀说："只有扎根泥土，才能懂得人民"，体现了她扎根基层、服务群众的初心。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question" data-answer="D">
+                            <div class="quiz-number">4</div>
+                            <div class="quiz-text">"四下基层"不包括以下哪一项？</div>
+                            <div class="quiz-options">
+                                <div class="quiz-option" onclick="selectOption(this, 'A')">A. 宣传党的路线方针政策下基层</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'B')">B. 调查研究下基层</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'C')">C. 信访接待下基层</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'D')">D. 文艺演出现场下基层</div>
+                            </div>
+                            <div class="quiz-answer">
+                                <div class="quiz-answer-title">✓ 正确答案：D</div>
+                                <div>四下基层包括：宣传、调研、信访、现场办公，不包括文艺演出。</div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question" data-answer="B">
+                            <div class="quiz-number">5</div>
+                            <div class="quiz-text">黄文秀毕业于哪所大学？</div>
+                            <div class="quiz-options">
+                                <div class="quiz-option" onclick="selectOption(this, 'A')">A. 清华大学</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'B')">B. 北京师范大学</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'C')">C. 北京大学</div>
+                                <div class="quiz-option" onclick="selectOption(this, 'D')">D. 复旦大学</div>
+                            </div>
+                            <div class="quiz-answer">
+                                <div class="quiz-answer-title">✓ 正确答案：B</div>
+                                <div>黄文秀毕业于北京师范大学，获得法学硕士学位。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="complete-section">
+                    <span style="color: var(--text-light); font-size: 14px;">完成测验后点击按钮记录进度</span>
+                    <button class="complete-btn" onclick="completeModule('quiz')">
+                        <span>✓</span> 标记完成
+                    </button>
+                </div>
+            </div>
+        </main>
     </div>
 
     <script>
-        function toggleCheck(element) {
-            element.classList.toggle('completed');
-            updateProgress();
+        // 学习进度数据
+        let progress = {
+            jinju: false,
+            redian: false,
+            renwu: false,
+            cuoshi: false,
+            quiz: false
+        };
+        
+        // 从本地存储加载进度
+        function loadProgress() {
+            const saved = localStorage.getItem('studyProgress_2026-04-09');
+            if (saved) {
+                progress = JSON.parse(saved);
+                updateUI();
+            }
         }
         
-        function updateProgress() {
-            const items = document.querySelectorAll('.checklist li');
-            const completed = document.querySelectorAll('.checklist li.completed');
-            const progress = (completed.length / items.length) * 100;
-            document.getElementById('progress').style.width = progress + '%';
-            document.getElementById('progressText').textContent = completed.length + '/' + items.length;
+        // 保存进度
+        function saveProgress() {
+            localStorage.setItem('studyProgress_2026-04-09', JSON.stringify(progress));
         }
+        
+        // 更新UI
+        function updateUI() {
+            // 更新模块状态
+            Object.keys(progress).forEach(key => {
+                const statusEl = document.getElementById('status-' + key);
+                if (statusEl) {
+                    if (progress[key]) {
+                        statusEl.textContent = '已完成';
+                        statusEl.className = 'module-status completed';
+                    } else {
+                        statusEl.textContent = key === 'quiz' ? '待完成' : '待学习';
+                        statusEl.className = 'module-status pending';
+                    }
+                }
+            });
+            
+            // 更新统计
+            const completed = Object.values(progress).filter(v => v).length;
+            const total = Object.keys(progress).length;
+            const percent = Math.round((completed / total) * 100);
+            
+            document.getElementById('totalProgress').textContent = percent + '%';
+            document.querySelector('.progress-ring-fill').style.strokeDashoffset = 326.73 * (1 - percent / 100);
+            
+            // 更新各模块统计
+            document.getElementById('statJinju').textContent = progress.jinju ? '2' : '0';
+            document.getElementById('statRedian').textContent = progress.redian ? '1' : '0';
+            document.getElementById('statRenwu').textContent = progress.renwu ? '1' : '0';
+            document.getElementById('statCuoshi').textContent = progress.cuoshi ? '1' : '0';
+        }
+        
+        // 完成模块
+        function completeModule(module) {
+            progress[module] = !progress[module];
+            saveProgress();
+            updateUI();
+            
+            // 更新按钮状态
+            const btn = event.target;
+            if (progress[module]) {
+                btn.innerHTML = '<span>✓</span> 已完成';
+                btn.classList.add('completed');
+            } else {
+                btn.innerHTML = '<span>✓</span> 标记完成';
+                btn.classList.remove('completed');
+            }
+        }
+        
+        // 选择测验选项
+        function selectOption(el, option) {
+            const question = el.closest('.quiz-question');
+            const answer = question.dataset.answer;
+            const options = question.querySelectorAll('.quiz-option');
+            const answerBox = question.querySelector('.quiz-answer');
+            
+            // 重置所有选项
+            options.forEach(opt => {
+                opt.classList.remove('correct', 'wrong');
+                opt.style.pointerEvents = 'none';
+            });
+            
+            // 标记选中选项
+            if (option === answer) {
+                el.classList.add('correct');
+            } else {
+                el.classList.add('wrong');
+                // 显示正确答案
+                options.forEach(opt => {
+                    if (opt.textContent.trim().startsWith(answer)) {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+            
+            // 显示答案解析
+            answerBox.classList.add('show');
+        }
+        
+        // 显示昨天/明天（示例功能）
+        function showYesterday() {
+            alert('昨天：2026-04-08\n\n功能开发中，历史记录页面即将上线！');
+        }
+        
+        function showTomorrow() {
+            alert('明天：2026-04-10\n\n明天早上8点自动更新新内容！');
+        }
+        
+        // 页面加载时初始化
+        window.onload = function() {
+            loadProgress();
+        };
     </script>
 </body>
 </html>
